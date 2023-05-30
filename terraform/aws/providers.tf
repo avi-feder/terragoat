@@ -8,6 +8,7 @@ provider "aws" {
   alias      = "plain_text_access_keys_provider"
   region     = "us-west-1"
   access_key = "AKIAIOSFODNN7EXAMPLE"
+  aaa = "bbbbbb"
 }
 
 terraform {
