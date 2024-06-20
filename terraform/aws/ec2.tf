@@ -1,6 +1,4 @@
-resource "aws_instance" "web_host" {
-  # ec2 have plain text secrets in user data
-  ami           = "${var.ami}"
+          = "${var.ami}"
   instance_type = "t2.nano"
 
   vpc_security_group_ids = [
@@ -93,9 +91,7 @@ resource "aws_security_group" "web-node" {
     cidr_blocks = [
     "0.0.0.0/0"]
   }
-  ingress {
-    from_port = 22
-    to_port   = 22
+  
     protocol  = "tcp"
     cidr_blocks = [
     "0.0.0.0/0"]
@@ -320,9 +316,7 @@ output "vpc_id" {
   description = "The ID of the VPC"
   value       = aws_vpc.web_vpc.id
 }
-
-output "public_subnet" {
-  description = "The ID of the Public subnet"
+ "The ID of the Public subnet"
   value       = aws_subnet.web_subnet.id
 }
 
